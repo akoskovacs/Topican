@@ -8,7 +8,13 @@
 </head>
 <body>
 <div id="page">
+  <div id="header">
+    <%= render :partial => "layouts/header" %>
+  </div>
   <%= yield %>
+  <div id="footer">
+    <!-- Footer goes here -->
+  </div>
 </div>
 </body>
 </html>

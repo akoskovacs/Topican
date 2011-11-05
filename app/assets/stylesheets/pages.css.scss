@@ -8,3 +8,18 @@
   margin-right: auto;
 }
 
+#header {
+  ul li {
+    list-style-type: none;
+    display: inline-block;
+    a {
+      text-decoration: none;
+      &:visited {
+      color: #09c;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
