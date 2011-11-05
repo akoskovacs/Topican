@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
-  def index
+  def new
+      
   end
 
+  def destroy
+    
+  end
 end
