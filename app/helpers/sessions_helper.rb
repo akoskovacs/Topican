@@ -1,4 +1,5 @@
 module SessionsHelper
+  attr_writer :current_user
   def sign_in(user)
     session[:user] = user.id
     self.current_user = user

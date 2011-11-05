@@ -11,7 +11,9 @@
   <div id="header">
     <%= render :partial => "layouts/header" %>
   </div>
-  <%= render 'layouts/flash' if flash.present? %>
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"<%= value %></div>
+  <% end %>
   <%= yield %>
   <div id="footer">
     <!-- Footer goes here -->

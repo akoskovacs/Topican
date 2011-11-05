@@ -13,4 +13,7 @@ class SessionsController < ApplicationController
       redirect_to user
     end
   end
+
+  def destroy
+  end
 end

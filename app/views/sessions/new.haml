@@ -1,4 +1,4 @@
-= form_for :sessions do |f|
+= form_for :session, :url => sessions_path do |f|
   .field
     = f.label :email
     %br
@@ -9,3 +9,6 @@
       = f.password_field :password
   .action
     = f.submit 'Sign in'
+%p
+  New user?
+  = link_to 'Sign up now!', signup_path

@@ -1,6 +1,8 @@
 Forum::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
+  match 'signup' => 'users#new'
+  match 'signin' => 'sessions#new'
   root :to => 'pages#index'
 
   # The priority is based upon order of creation:
