@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def index
-  end
-
   def new
   end
 
@@ -9,11 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user.nil? || user.try(:authenticate, params[:session][:password]).nil?
       flash.now[:error] = "Bad email or password!"
-      redirect_to 'new'
+      redirect_to signin_path
     else
-      flash[:notice] = "Successful login"
-      redirect_to user
       sign_in user
+      flash[:success] = "Successful login"
+      redirect_to user
     end
   end
 
