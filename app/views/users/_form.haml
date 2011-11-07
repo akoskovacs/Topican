@@ -1,5 +1,5 @@
 = form_for @user do |f|
-  = render 'shared/model_errors' if @user.errors.any?
+  = render 'shared/model_errors', :collection => @user if @user.errors.any?
   .field
     = f.label :name
     %br

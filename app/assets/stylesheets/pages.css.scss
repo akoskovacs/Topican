@@ -24,19 +24,16 @@
   }
 }
 
-#flash {
+.flash {
     background: #eee;
-    #error {
+    .error {
       color: red;
       border: 1px solid red;
     }
 
-    #notice {
+    .notice {
       color: green;
       border: 1px solid green;
-    }
-    #error {
-      border: 1px solid red;
     }
 }
 
