@@ -7,17 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="page">
-  <div id="header">
-    <%= render :partial => "layouts/header" %>
-  </div>
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-  <% end %>
-  <%= yield %>
-  <div id="footer">
-    <!-- Footer goes here -->
-  </div>
+<div id="container">
+  <div id="page">
+    <div id="header">
+      <%= render :partial => "layouts/header" %>
+    </div>
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+    <%= yield %>
+    <div id="footer">
+      <!-- Footer goes here -->
+    </div>
+</div>
 </div>
 </body>
 </html>
