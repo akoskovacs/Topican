@@ -1,0 +1,6 @@
+#errorExplanation
+  %h2 I cannot save the datas, becase these error(s) prohibited it:
+  %ul
+    - @user.errors.full_messages do |msg|
+      %li msg
+    
