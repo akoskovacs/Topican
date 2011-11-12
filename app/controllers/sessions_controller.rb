@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:session][:email])
-    if user.nil? || user.try(:authenticate, params[:session][:password]).nil?
-      flash.now[:error] = "Bad email or password!"
-      redirect_to signin_path
-    else
+    if (!user.nil? && user.try(:authenticate, params[:session][:password]))
       sign_in user
       flash[:success] = "Successful login"
       redirect_to user
+    else
+      flash.now[:error] = "Bad email or password!"
+      render 'new'
     end
   end
 
