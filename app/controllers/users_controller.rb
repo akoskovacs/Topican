@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #before_filter :right_user?, :only => [:edit, :destroy]
+
   def index
     @users = User.all
   end
@@ -21,6 +23,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
   def update
+    @user = User.find_by_id(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Successfully updated!"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 end
