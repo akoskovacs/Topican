@@ -17,7 +17,10 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user, :success => "Welcome!"
     else
-      redirect_to signup_path
+      render 'new'
     end
+  end
+
+  def update
   end
 end
