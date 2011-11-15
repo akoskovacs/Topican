@@ -4,18 +4,22 @@
     = f.label :name
     .input
       = f.text_field :name
+      %span(class = "help-block") Your full name
   .clearfix
     = f.label :email
     .input
       = f.text_field :email
+      %span(class = "help-block") Not publicitly viewable
   .clearfix
     = f.label :password
     .input
       = f.password_field :password
+      %span(class = "help-block") Minimum 6 letter
   .clearfix
     = f.label :password_confirmation
     .input
       = f.password_field :password_confirmation
+      %span(class = "help-block") Same as above :-)
   .actions
     = f.submit 'Create user', :class => "btn success"
     = link_to 'Cancel', :back, :class => "btn"
