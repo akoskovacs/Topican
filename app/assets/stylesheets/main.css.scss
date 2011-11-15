@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#page {
-  width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+@import "bootstrap";
+.container {
+  width: 820px;
+}
+
+.content {
+    margin-top: 50px;
 }
 
 #header {

@@ -1,4 +1,4 @@
-%ul
+%ul(class = "nav")
   %li= link_to 'Home', root_path
   - if signed_in? 
     %li= link_to current_user.name, edit_user_path(current_user) 
