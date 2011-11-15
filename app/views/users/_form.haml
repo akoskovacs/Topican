@@ -1,20 +1,22 @@
 = form_for @user do |f|
   = render 'user_errors' if @user.errors.any?
-  .field
+  .clearfix
     = f.label :name
-    %br
+    .input
       = f.text_field :name
-  .field
+  .clearfix
     = f.label :email
-    %br
+    .input
       = f.text_field :email
-  .field
+  .clearfix
     = f.label :password
-    %br
+    .input
       = f.password_field :password
-  .field
+  .clearfix
     = f.label :password_confirmation
-    %br
+    .input
       = f.password_field :password_confirmation
-  .action
-    = f.submit 'Create user'
+  .actions
+    = f.submit 'Create user', :class => "btn success"
+    = link_to 'Cancel', :back, :class => "btn"
+
