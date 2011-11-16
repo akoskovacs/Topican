@@ -17,7 +17,10 @@
 <div class="container">
   <div class="content">
     <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
+      <div class="alert-message <%= key %>">
+        <a class="close" href="#">x</a>
+        <p><%= value %></p>
+      </div>
     <% end %>
     <%= yield %>
   </div>
