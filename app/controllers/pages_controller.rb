@@ -1,9 +1,4 @@
 class PagesController < ApplicationController
-  def new
-      
-  end
-
-  def destroy
-    
+  def home
   end
 end
