@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   #before_filter :right_user?, :only => [:edit, :destroy]
 
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page])
   end
 
   def show
