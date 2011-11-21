@@ -1,3 +1,8 @@
-- @users.each do |user|
-  = render user
-  %br
+= will_paginate
+
+%table
+  - @users.each do |user|
+    %tr
+      %td= render user
+
+= will_paginate
