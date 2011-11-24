@@ -1,0 +1,14 @@
+%h1 Category '#{@category.name}'
+%fieldset
+  %legend Create a new post
+  = form_for [@category, @category.posts.build]  do |f|
+    = f.text_area :content, :class => "xxlarge", :rows => 5
+    %span(class = "help-block") Your message in the category
+    = f.submit 'Create post', :class => "btn success"
+
+%hr
+%table
+  - @posts.each do |post|
+    %tr
+      = render post, :locals => { :post => post }
+%hr

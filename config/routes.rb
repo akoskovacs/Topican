@@ -3,11 +3,14 @@ Forum::Application.routes.draw do
   match 'signup' => 'users#new'
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
+  match 'profile' => 'users#profile'
   resources :categories do
     resources :posts
   end
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    get 'profile'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_filter :right_user?, :only => [:edit, :destroy]
+  before_filter :authenticate!, :except => [:new, :create]
 
   def index
     @users = User.paginate(:page => params[:page])
@@ -33,7 +33,12 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully updated!"
       redirect_to @user
     else
-      render 'edit'
+      render :edit
     end
+  end
+
+  def profile
+    @user = current_user
+    render :show
   end
 end

@@ -1,0 +1,4 @@
+%td= post.content
+- unless post.user.nil?
+  %td= link_to post.user.name, post.user
+  %td <i style="color:gray;">Created #{time_ago_in_words(post.created_at)} ago.</i>
