@@ -8,6 +8,8 @@ gem 'sqlite3'
 gem 'haml'
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.
