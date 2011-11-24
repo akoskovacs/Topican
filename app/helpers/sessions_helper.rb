@@ -48,6 +48,6 @@ module SessionsHelper
   end
 
   def clear_location
-    cookies[:forward_to] = nil
+    cookies.delete(:forward_to)
   end
 end
