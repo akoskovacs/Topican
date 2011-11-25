@@ -17,8 +17,8 @@
 <div class="container">
   <div class="content">
     <% flash.each do |key, value| %>
-      <div class="alert-message <%= key %>">
-        <a class="close" href="#">x</a>
+      <div class="alert-message <%= key %> fade in" data-alert="alert">
+        <a class="close" href="#">X</a>
         <p><%= value %></p>
       </div>
     <% end %>

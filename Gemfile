@@ -10,6 +10,7 @@ gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'faker'
+gem 'gravatar_image_tag'
 
 # Gems used only for assets and not required
 # in production environments by default.
