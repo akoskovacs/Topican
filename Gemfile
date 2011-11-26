@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'faker'
 gem 'gravatar_image_tag'
+gem 'rdiscount'
 
 # Gems used only for assets and not required
 # in production environments by default.
