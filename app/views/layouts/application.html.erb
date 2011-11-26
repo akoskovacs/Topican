@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="topbar">
-  <div class="fill">
-    <div class="container">
-      <%= render :partial => "layouts/header" %>
-    </div>
+<div class="topbar-wrapper">
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <%= render :partial => "layouts/header" %>
+        </div>
+      </div>
   </div>
 </div>
 <div class="container">
@@ -25,7 +27,8 @@
     <%= yield %>
   </div>
   <div class="footer">
-    Copyright &copy; Ákos Kovács - 2011
+    Copyleft &copy; <a href="http://akoskovacs.github.com">Ákos Kovács</a> - 2011<br />
+    Powered by <a href="http://github.com/akoskovacs/Topican">Topican</a><br />
   </div>
 </div>
 </body>

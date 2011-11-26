@@ -5,7 +5,7 @@
 @import "bootstrap";
 
 body {
-  background-color: #EEE;
+  background-color: #eee;
   z-index: 0;
 }
 
@@ -14,9 +14,8 @@ body {
 }
 
 .content {
-    margin-top: 60px;
+    margin-top: 40px;
     padding: 30px;
-    padding-bottom: 5px;
     background-color: #FFF;
     z-index: 1;
     @include border-radius(5px);
@@ -27,4 +26,34 @@ body {
     margin-top: 20px;
     text-align: center;
     color: gray;
+    a {
+      color: darken(gray, 30%);
+      & :hover {
+        text-decoration: dotted;
+      }
+    }
 }
+
+.topbar {
+  position:absolute;
+  height: 40px;
+  .fill {
+    @include border-radius(5px);
+  }
+}
+
+.topbar-wrapper {
+  top: 20px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  position: relative;
+  @include border-radius(5px);
+}
+
+.topbar .fill {
+    background-color: #222;
+    //@include vertical-gradient(#48036f, #5f2580);
+}
+
