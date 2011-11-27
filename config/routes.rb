@@ -5,7 +5,7 @@ Forum::Application.routes.draw do
   match 'logout' => 'sessions#destroy'
   match 'profile' => 'users#profile'
   resources :categories do
-    resources :posts
+    resources :posts, :except => [:show]
   end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users do
