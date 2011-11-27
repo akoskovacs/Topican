@@ -5,7 +5,7 @@ namespace :db do
   task :sample => :environment do
     Rake::Task['db:reset'].invoke
     admin = User.create!(:name => 'Charlie Root',
-      :email => 'charlietheroot@localhost.com',
+      :email => 'admin@localhost',
       :password => 'admin',
       :password_confirmation => 'admin')
     100.times do |n|
@@ -15,6 +15,14 @@ namespace :db do
         :email => email,
         :password => 'foobar',
         :password_confirmation => 'foobar')
+    end
+    40.times do
+      cat = Category.create!(:name => Faker::Lorem.sentence,
+        :description => Faker::Lorem.paragraph, :user_id => Random.rand(100))
+      40.times do 
+        cat.posts.create!(:content => Faker::Lorem.paragraph,
+           :user_id => Random.rand(100))
+      end
     end
   end
 end
