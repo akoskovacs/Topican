@@ -26,6 +26,12 @@
     <% end %>
     <%= yield %>
   </div>
+  <% if Rails::env.development? %>
+    <p style="margin-top: 20px;">
+      <strong>Debug parameters:</strong>
+      <%= debug(params) %>
+    </p>
+  <% end %>
   <div class="footer">
     Copyleft &copy; <a href="http://akoskovacs.github.com">Ákos Kovács</a> - 2011<br />
     Powered by <a href="http://github.com/akoskovacs/Topican">Topican</a><br />
