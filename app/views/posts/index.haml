@@ -1,17 +1,24 @@
-%h1 Category '#{@category.name}'
-%fieldset
-  %legend Create a new post
-  = form_for [@category, @category.posts.build]  do |f|
-    = f.text_area :content, :class => "xxlarge", :rows => 5
-    %span(class = "help-block") Your message in the category
-    = f.submit 'Create post', :class => "btn success"
+.page-header
+  %h1=  @category.name
+  %h6= @category.description
+%button(class="comment-button btn primary" data-toggle="toggle")New comment
+.well.new-comment
+  %fieldset
+    %legend Create a new post
+    = form_for [@category, @category.posts.build]  do |f|
+      = f.text_area :content, :class => "xxlarge", :rows => 5
+      %span(class = "help-block") Your message in the category
+      %br
+      = f.submit 'Save!', :class => "send-button btn success"
 
 %hr
 - if @posts.count == 0
   <font color="gray"><i>There is no posts, yet.</i></font>
 - else
+  = will_paginate @posts
   %table
     - @posts.each do |post|
       %tr
         = render post, :locals => { :post => post }
+  = will_paginate @posts
 %hr
