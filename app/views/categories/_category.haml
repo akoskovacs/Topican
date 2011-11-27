@@ -1,4 +1,7 @@
 %tr
   %td= link_to category.name, category_posts_path(category)
-  %td <i style="color: gray;">#{category.description}</i>
+  - if category.description.nil?
+    %td <i style="color: gray;">No description</i>
+  - else
+    %td <i style="color: gray;">#{category.description}</i>
   %td(align="right") <strong>[#{category.posts.count}]</strong>
