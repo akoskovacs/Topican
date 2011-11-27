@@ -33,6 +33,11 @@ module SessionsHelper
       redirect_to login_path
   end
 
+  def forbidden!
+      flash[:error] = "Access denied!" 
+      redirect_to categories_path
+  end
+
   def store_location
     cookies[:forward_to] = request.fullpath
   end
@@ -49,5 +54,17 @@ module SessionsHelper
 
   def clear_location
     cookies.delete(:forward_to)
+  end
+
+  def right_user?(user = nil)
+    if user.nil?
+      if current_user != User.find_by_id(params[:id])
+        forbidden!
+      end
+    else
+      if user != current_user
+        forbidden!
+      end
+    end
   end
 end

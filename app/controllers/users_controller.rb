@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate!, :except => [:new, :create]
+  before_filter :right_user?, :only => [:edit, :update, :delete]
 
   def index
     @users = User.paginate(:page => params[:page])
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user, :success => "Welcome!"
     else
-      render 'new'
+      render :new
     end
   end
 
