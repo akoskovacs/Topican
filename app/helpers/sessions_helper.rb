@@ -39,21 +39,21 @@ module SessionsHelper
   end
 
   def store_location
-    cookies[:forward_to] = request.fullpath
+    cookies[:ForwardTo] = request.fullpath
   end
 
   def redirect_back_or_to(uri)
-    if (cookies[:forward_to].nil?)
+    if (cookies[:ForwardTo].nil?)
       redirect_to uri
     else
-       path = cookies[:forward_to]
+       path = cookies[:ForwardTo]
        clear_location
        redirect_to path
     end
   end
 
   def clear_location
-    cookies.delete(:forward_to)
+    cookies.delete(:ForwardTo)
   end
 
   def right_user?(user = nil)
