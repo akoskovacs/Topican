@@ -1,15 +1,7 @@
 .page-header
-  %h1=  @category.name
-  %h6= @category.description
-%button(class="comment-button btn primary" data-toggle="toggle")New comment
-.well.new-comment
-  %fieldset
-    %legend Create a new post
-    = form_for [@category, @category.posts.build]  do |f|
-      = f.text_area :content, :class => "xxlarge", :rows => 5
-      %span(class = "help-block") Your message in the category
-      %br
-      = f.submit 'Save!', :class => "send-button btn success"
+  = render 'page_header'
+
+= render 'new_comment'
 
 %hr
 - if @posts.count == 0

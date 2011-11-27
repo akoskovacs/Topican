@@ -1,8 +1,9 @@
 %h1 Categories
+= link_to 'New category', new_category_path, :class => "btn primary"
 = will_paginate @categories
 %table
   - @categories.each do |category| 
     %tr
       = render category
 = will_paginate @categories
-= link_to 'New category', new_category_path, :class => "btn"
+= link_to 'New category', new_category_path, :class => "btn primary"

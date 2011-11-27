@@ -1,0 +1,5 @@
+- if @category.user == current_user
+  %h1  #{@category.name} <small>(#{link_to 'Edit', edit_category_path(@category)})</small> 
+- else
+  %h1  #{@category.name}
+%h6= @category.description

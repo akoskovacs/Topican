@@ -6,17 +6,36 @@ class CategoriesController < ApplicationController
   end
   
   def new
-    @category = Category.new(:user => current_user)
+    @category = Category.new
   end
 
   def create
     @category = Category.new(params[:category])
+    @category.user = current_user
     if @category.save
       flash[:success] = "Category created successfully!"
       redirect_to category_posts_path(@category)
     else
       flash[:error] = "Name must be given!"
       render :new
+    end
+  end
+
+  def edit
+    @category = Category.find_by_id(params[:id])
+  end
+
+  def update
+    @category = Category.find_by_id(params[:id])
+    @category.update_attributes(params[:category])
+    right_user?(@category.user)
+    @category.user = current_user
+    if @category.save
+      flash[:sucess] = "Category saved"
+      redirect_to category_posts_path(@category)
+    else
+      flash[:error] = "Category cannot saved!"
+      render :edit
     end
   end
 
