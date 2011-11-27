@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :posts
+  has_many :posts, :dependent => :destroy
+  has_many :categories, :dependent => :destroy
 
   attr_accessible :name, :email, :password, :password_confirmation
   validates :name, :presence => true
