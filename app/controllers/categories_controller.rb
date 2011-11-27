@@ -2,11 +2,11 @@ class CategoriesController < ApplicationController
   before_filter :authenticate!
 
   def index
-    @categories = Category.all
+    @categories = Category.paginate(:page => params[:page])
   end
   
   def new
-    @category = Category.new
+    @category = Category.new(:user => current_user)
   end
 
   def create
@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
       flash[:success] = "Category created successfully!"
       redirect_to category_posts_path(@category)
     else
-      flash[:error] = "Name and description must be given!"
+      flash[:error] = "Name must be given!"
       render :new
     end
   end
