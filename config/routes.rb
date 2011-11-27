@@ -9,7 +9,7 @@ Forum::Application.routes.draw do
   end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users do
-    get 'profile'
+    get 'profile', :on => :collection
   end
 
   # The priority is based upon order of creation:
