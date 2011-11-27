@@ -11,16 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111124144525) do
+ActiveRecord::Schema.define(:version => 20111127001553) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name"
+  add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.text     "content"
